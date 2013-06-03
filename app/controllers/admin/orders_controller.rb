@@ -68,7 +68,7 @@ module Admin
         if @card
           @order.refund_to_card(@card, @amount)
         else
-          @order.refund_via_cash(@amount)
+          @order.refund_via_cash
         end
         flash[:notice] = t("flash.orders.refund.success", number: @order.number)
       else
