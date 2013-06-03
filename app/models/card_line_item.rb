@@ -2,8 +2,6 @@ class CardLineItem < ActiveRecord::Base
   belongs_to :card
   belongs_to :order
 
-  scope :without_order, lambda { where('order_id is null') }
-
   validates :card, :amount, :validity, presence: true
   validates :validity, numericality: { greater_than_or_equal_to: 0 }
 
